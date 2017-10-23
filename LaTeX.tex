@@ -1,0 +1,152 @@
+\documentclass[]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+% utf8 ist der Standard weltweit, bei latin1 stützt es ab
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+\usepackage{tikz}
+\usepackage[european]{circuitikz}
+\usepackage{lipsum} 
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{dsfont}
+%\addbibresource{/home/liam/Dokumente/Uni/Physik/LaTeX/Project/lit.bib}
+
+\title{\LaTeX}
+\author{Liam Hurwitz}
+\date{18.10.2017}
+\subtitle{Martikelnummer 4441446 FB01 Physik VF}
+\publishers{Uni-Bremen}
+% Ich brauche diese Information um weiter unten Maketitle zu nutzen
+
+\setcounter{secnumdepth}{2}
+% Die Tiefe der Überschriften mit der Nummerierung werden eingeschränkt 
+
+\begin {document}
+\maketitle
+\tableofcontents
+% Um die Seitenzahl zu aktualisieren muss ich den Compiler 2x neu starten
+\section*{Bildverzeichnis}
+Bild \ref{fig:Bild1}
+
+\section {Hallo Welt Hallo Mensch }
+% Die eingeklammerten Wörter werden in Italics vorgehoben
+% Die doppelt eingeklmmerten ... 
+\emph{Sed ut perspiciatis unde} omnis iste natus error sit voluptatem accusantium doloremque laudantium, \ref{fig:Bild1} totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et \ref{Hallo Welt} quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,  \ref{Ich bin Faul} adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, \emph{\emph{quis nostrum exercitationem \pageref{Hallo Welt} ullam corporis suscipit laboriosam}}, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? \footnote{Was sind Menschen}
+
+\subsection {Subsection}
+\textbackslash \^  \\
+\lipsum[1-1]
+\subsubsection *{Sub - Subsection}
+% Die Nummerierung verschwindet, sowie der Eintrag ins Inhaltsverzeichnis
+\lipsum[2-7]
+
+\section{Text Zentrieren}
+\begin{flushleft}
+\lipsum[1-1]
+\end{flushleft}
+\begin{quote}
+\lipsum[1-1]
+\end{quote}
+\begin{center}
+\lipsum[1-1]
+\end{center}
+
+\section{Listen}
+
+\begin{enumerate}[]
+	\item  Hier geht es um Listen
+	\item Listen kann man schön verschachteln
+    	\begin{itemize}
+    	\item man muss dabei einiges beachten \label{Ich bin Faul}
+		\item \LaTeX ist eine strukturierte Sprache
+		\item[!] zeichen lassen sich ändern
+		\end{itemize}
+
+		\begin{enumerate}[label=(\alph*)]
+        \item Verschachtelung geht aber immer
+        \item . . . wie man hier sieht!
+		\end{enumerate}
+      \item man muss sich beim Eingeben nur konzentrieren, sonst passieren Fehler:
+      	\begin{enumerate}[label=(\roman*)]
+		\item beliebt ist, eine \emph{enumerate}-Umgebung mit einer /emph{itemize}-Umgebung zu schließen
+        \item oder statt \{itemize\} \{itemise\} zu tippen
+		\end{enumerate}
+	\end{enumerate}
+
+\section{\"Uberschriften}
+\subsubsection{Die Welt}
+Hallo ich bin ein Mensch wo bleibe ich \label{Hallo Welt}
+
+\begin{table}[h] \centering
+\begin{tabular}{|l|r|p{3.14cm}|c|c|}\hline
+1 & 2 & 3 & 4 & 5 \\ \hline
+1 & 4 & 9 & 16 & 25 \\ \hline
+1 & 8 & 27 & 64 & 125 \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{bild.jpg}
+  \caption{Ich in Theoretische Physik 1}
+  \label{fig:Bild1}
+\end{center}
+\end{figure}  
+
+
+ 
+\section{Ich mag Mathe}
+\subsection{Random for the Win}
+$\forall$ $\oslash$ $\leftrightsquigarrow$ $\otimes$ $\uplus$ $\^{a}$
+
+\subsection{Richtige Mathe}
+\begin{enumerate}[label=(\Roman*)]
+		\item Seien $a, b, c \in \mathds{R}$, mit $a, b$ die Katheten und $c$ die Hypotenuse eines rehtwinkligen Dreiecks. Dann gilt:
+		\begin{align}
+		a^2+b^2=c^2 \\
+		\end{align}
+
+        \item Die Summenformel für die geometrische Folge lautet:
+        \begin{align}
+		s_n = 1 + q + q^2 + \ldots +q^n =
+		\sum_{n}^{k=0}q^k =
+		\frac{1 - q^n+1}{1-q}
+		\end{align}
+		
+		\item Für den Grenzwert von $s n$ gilt für $|q| < 1$:
+		\[s_n \xrightarrow{ n \rightarrow \infty} \frac{1}{1 -q} \]
+		
+		\item Formel (1) und Fehlerformel (3) für die $n$-te harmonische Frequenz einer schwingen-
+den Seite:
+		\begin{align}
+		&& f_n &= \frac{n}{2L} \sqrt{\frac{F}{\rho A}} \\
+		&&  \Delta f_n  &= \pm \left \{ {\left|\frac{\partial \int_n}{\partial A}\delta A|+|\frac{\partial \int_n}{\partial A}\delta F\right|} \right \}  
+		\end{align}
+		
+		\end{enumerate}
+
+\section{Zitieren}
+\subsection{Ich lieb Verweise}
+\cite{9781848549562}
+
+\appendix
+% Keine Nummerierung sondern Buchstaben
+\section{Was mache ich hier?}
+\subsection{Deine Anwesenheit verändert nichts}
+Du bist am Ende angekommen
+
+\bibliographystyle{plain}
+\bibliography{/home/liam/Dokumente/Uni/Literatur/lit.bib}
+
+\end {document}
